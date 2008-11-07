@@ -4,7 +4,7 @@
 
 Here is the log for our progress on the project
 
-10-30-2008 - first setup
+==10-30-2008 - first setup==
 Have two cameras in lab (Trung has another one at home)
 Replaced the switch with a wireless router
 Installed OpenCV - has to be 1.0 because 1.1 is missing cvcam
@@ -39,10 +39,10 @@ Computers from the left to right (physically labeled as well)
 192.168.1.4
 192.168.1.5
 
-10-31-2008:
+==10-31-2008==
 We installed SVN onto all the local computers and Trung set up google server to hold code
 
-11-6-2008 : INTERNETS!
+==11-6-2008 : INTERNETS==
 Have one laptop connect wirelessly to the internet
 Have that laptop share it's internet
     1. Go to Network Connections
@@ -58,5 +58,3 @@ Then connect your computer to the WAN port of the router and make sure it grabs 
 TADA internets!
 
 - We then downloaded all the code onto the computers
-
-
