@@ -1,14 +1,7 @@
-#summary One-sentence summary of this page.
+#EE125 Topology
 
 = Introduction =
 
 EE125 Topology!
 
 [Log File]
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
