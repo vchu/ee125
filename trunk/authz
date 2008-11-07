@@ -1,0 +1,7 @@
+#[main:/]
+#* = r
+#username = rw
+
+# Enable read/write access for all authenticated users
+[/]
+* = rw
