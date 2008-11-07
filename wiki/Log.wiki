@@ -18,26 +18,22 @@ Note: If cannot remote into computer need to ping the computer first
 
 Password for all computers
 
-User: Administrator
-Password: Eecs2008
+Check Google Doc
 
 Password for Router
 
-User: Admin
-Password: Eecs2008
+Check Google Doc
 
 Password for Wireless
 
-WPA-PSK (TPIK)
-SSID: EE125_Topology
-Password: Eecs2008
+Check Google Doc
 
 Computers from the left to right (physically labeled as well)
 
-192.168.1.3
-192.168.1.2
-192.168.1.4
-192.168.1.5
+192.168.1.3 <br>
+192.168.1.2 <br>
+192.168.1.4 <br>
+192.168.1.5 <br>
 
 ==10-31-2008==
 We installed SVN onto all the local computers and Trung set up google server to hold code
