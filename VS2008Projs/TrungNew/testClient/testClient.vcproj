@@ -2,14 +2,10 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="TestProj"
-	ProjectGUID="{433FA14A-92B0-40E4-9A63-C0FA45B93FE8}"
-	RootNamespace="TestProj"
-	SccProjectName="Svn"
-	SccAuxPath="Svn"
-	SccLocalPath="Svn"
-	SccProvider="SubversionScc"
-	TargetFrameworkVersion="131072"
+	Name="testClient"
+	ProjectGUID="{FD2D0461-6341-4BC8-B529-93888D24EBBE}"
+	RootNamespace="testClient"
+	TargetFrameworkVersion="196613"
 	>
 	<Platforms>
 		<Platform
@@ -21,8 +17,10 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
+			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
+			CharacterSet="2"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -41,6 +39,12 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
+				Optimization="0"
+				MinimalRebuild="true"
+				BasicRuntimeChecks="3"
+				RuntimeLibrary="3"
+				WarningLevel="3"
+				DebugInformationFormat="4"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -53,8 +57,8 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				RandomizedBaseAddress="1"
-				DataExecutionPrevention="0"
+				GenerateDebugInformation="true"
+				TargetMachine="1"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -83,7 +87,8 @@
 			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
-			UseOfMFC="1"
+			CharacterSet="2"
+			WholeProgramOptimization="1"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -102,7 +107,12 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="C:\OpenCV\cv\include"
+				Optimization="2"
+				EnableIntrinsicFunctions="true"
+				RuntimeLibrary="2"
+				EnableFunctionLevelLinking="true"
+				WarningLevel="3"
+				DebugInformationFormat="3"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -115,10 +125,10 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cxcore.lib cv.lib highgui.lib cvaux.lib cvcam.lib Ws2_32.lib"
-				OutputFile="../../$(ProjectName).exe"
-				RandomizedBaseAddress="1"
-				DataExecutionPrevention="0"
+				GenerateDebugInformation="true"
+				OptimizeReferences="2"
+				EnableCOMDATFolding="2"
+				TargetMachine="1"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -151,80 +161,12 @@
 			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
-			<File
-				RelativePath="..\..\..\HSN-Demo2\C-EntranceDet\_BackgroundModel.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\HSN-Demo2\C-EntranceDet\_FileCapture.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\HSN-Demo2\C-EntranceDet\_Funcs.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\HSN-Demo2\C-EntranceDet\_MoteClass.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\HSN-Demo2\C-Server\_MoteComm.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\HSN-Demo2\C-Server\_MoteFncs.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\HSN-Demo2\C-Server\_Socket.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\HSN-Demo2\C-Server\XMain.cpp"
-				>
-			</File>
 		</Filter>
 		<Filter
 			Name="Header Files"
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
-			<File
-				RelativePath="..\..\..\HSN-Demo2\C-EntranceDet\_BackgroundModel.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\HSN-Demo2\C-EntranceDet\_FileCapture.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\HSN-Demo2\C-EntranceDet\_Funcs.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\HSN-Demo2\C-EntranceDet\_Global.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\HSN-Demo2\C-EntranceDet\_MoteClass.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\HSN-Demo2\C-Server\_MoteComm.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\HSN-Demo2\C-Server\_MoteFncs.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\HSN-Demo2\C-Server\_Socket.h"
-				>
-			</File>
-			<File
-				RelativePath=".\Test.h"
-				>
-			</File>
 		</Filter>
 		<Filter
 			Name="Resource Files"
@@ -232,10 +174,6 @@
 			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
 			>
 		</Filter>
-		<File
-			RelativePath=".\ClassDiagram1.cd"
-			>
-		</File>
 	</Files>
 	<Globals>
 	</Globals>
