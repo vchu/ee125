@@ -10,7 +10,7 @@ unsigned __stdcall Answer(void* a) {
     std::string r = s->ReceiveLine();
     if (r.empty()) break;
 	std::cout<<"Client sent:"<<r<<"\n";
-	
+	//blah
   
    // s->SendLine(r);
   }
