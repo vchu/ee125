@@ -7,17 +7,15 @@ using namespace std;
 int main() {
 
   try {
-    SocketClient s("www.google.com", 80);
-
-    s.SendLine("GET / HTTP/1.0");
-    s.SendLine("Host: www.google.com");
-    s.SendLine("");
-
+    SocketClient s("localhost", 2000);
+	     
     while (1) {
-      string l = s.ReceiveLine();
-      if (l.empty()) break;
-      cout << l;
-      cout.flush();
+      string l ;//= s.ReceiveLine();
+	  std::cin>>l;
+	  s.SendLine(l);
+     // if (l.empty()) break;
+      //cout << l;
+     // cout.flush();
     }
 
   } 
