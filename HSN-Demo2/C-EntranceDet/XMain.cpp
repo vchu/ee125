@@ -77,7 +77,7 @@ int main()
   int delay; // Delay used for stopping when occlusions are detected.
 
   // Now we iterate over all frames.
-  //cvWaitKey(0);
+  cvWaitKey(0);
   for(int i = 5; i<=FileData.getNoFrames(); i++)
   {
     delay = 10;
@@ -184,10 +184,8 @@ int main()
     xshort buf[1000];
     int bufSz = GetPkgModel(buf,&(mote[n]));
     printf("\nMODEL PACKAGE: \n    ");
-    //sprintf(imName,"../../Pkg_Model_%02d.dta",n);
+    sprintf(imName,"../../Pkg_Model_%02d.dta",n);
     out.open(imName,ios::binary);
-	std::cout<<"Size:"<<bufSz<<"\n";
-	
     for(int i=0; i<bufSz; i++)
     {
       printf("%d ",(int)buf[i]);
@@ -211,20 +209,23 @@ int main()
 
     // Obtaining and Displaying Observations Package.
     buf[0] = 0; // Because observations start at mote 0.
+	char* sendbuffer; // Buffer for package
     bufSz = GetPkgObservations(buf+1,&(mote[n]),30)+1;
-    char* sendbuffer;
-	printf("\nOBSERVATIONS PACKAGE: \n    ");
+    printf("\nOBSERVATIONS PACKAGE: \n    ");
     sprintf(imName,"../../Pkg_Observations_%02d.dta",n);
     out.open(imName,ios::binary);
+	sendbuffer = (char *) malloc((bufSz+2)*3);
+	sprintf(sendbuffer, "ID5 ");
+	char* a = (char *) malloc(3);
     for(int i=0; i<bufSz; i++)
     {
-		//printf(sendbuffer,"%d ",(int)buf[i]);
-      sprintf(sendbuffer,"%d ",(int)buf[i]);
+      printf("%d ",(int)buf[i]);
+	  sprintf(a, "%d ", (int)buf[i]);
+	  strcat(sendbuffer,a);
     }
-	sprintf(sendbuffer, "12 %s", sendbuffer);
-	printf("%s ",sendbuffer);
-	SocketClient s("localhost", 2000);     
-	s.SendLine(sendbuffer);
+    printf("%s ",sendbuffer);
+    SocketClient s("localhost", 2000);     
+    s.SendLine(sendbuffer);
     out.write((char*)buf,bufSz);
     out.close();
     printf("\n");
@@ -244,7 +245,7 @@ int main()
   }
 
   // Releasing Images and Windows
-  //cvWaitKey(0);
+  cvWaitKey(0);
 
   delete BG;
   delete segPtr[0];
