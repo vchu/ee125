@@ -54,3 +54,17 @@ Then connect your computer to the WAN port of the router and make sure it grabs 
 TADA internets!
 
 - We then downloaded all the code onto the computers
+
+==11-7-2008 : TCP/IP==
+We were able to run the base code - proj.exe
+
+We started to play around with TCP/IP code that we found online.  
+
+*Note we should make sure we don't delete the important copyright items before it
+
+==11-9-2008: Send==
+We were able to create a Network class with function send:
+   * This function input included the (ID, Data, Size);
+
+Testing:
+   * We were also able to run the server on one central computer and send it data from another computer as a "client" with actual data from the original camera input in Xmain
