@@ -1,3 +1,5 @@
 180 %%% Number of frames
-1 %%% Number of views
+3 %%% Number of views
+im_%03d.png %%% File name format
+im_%03d.png %%% File name format
 im_%03d.png %%% File name format
