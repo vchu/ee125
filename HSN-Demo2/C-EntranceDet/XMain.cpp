@@ -8,10 +8,15 @@
 #include "_Funcs.h"
 #include "_MoteClass.h"
 #include "..\..\HSN-Demo2\C-Server\_Socket.h"
+#include "..\..\BIN\C-EntranceDet\Network.h"
+
 using namespace std;
 
 int main()
 {
+  // Initialize Socket Port
+  SocketClient s("192.168.1.2", 2000);  
+
   // Initializing File Capture
   FileCapture FileData;
   FileData.InitCapture("C:/Pictures/Seq_Car01/");
@@ -209,23 +214,15 @@ int main()
 
     // Obtaining and Displaying Observations Package.
     buf[0] = 0; // Because observations start at mote 0.
-	char* sendbuffer; // Buffer for package
     bufSz = GetPkgObservations(buf+1,&(mote[n]),30)+1;
     printf("\nOBSERVATIONS PACKAGE: \n    ");
     sprintf(imName,"../../Pkg_Observations_%02d.dta",n);
     out.open(imName,ios::binary);
-	sendbuffer = (char *) malloc((bufSz+2)*3);
-	sprintf(sendbuffer, "ID5 ");
-	char* a = (char *) malloc(3);
     for(int i=0; i<bufSz; i++)
     {
       printf("%d ",(int)buf[i]);
-	  sprintf(a, "%d ", (int)buf[i]);
-	  strcat(sendbuffer,a);
     }
-    printf("%s ",sendbuffer);
-    SocketClient s("localhost", 2000);     
-    s.SendLine(sendbuffer);
+	sendTo(4,buf,bufSz,s);
     out.write((char*)buf,bufSz);
     out.close();
     printf("\n");
