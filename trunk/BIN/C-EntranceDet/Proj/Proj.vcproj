@@ -164,6 +164,14 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\..\HSN-Demo2\C-Server\_Socket.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\Network.cpp"
+				>
+			</File>
+			<File
 				RelativePath="..\..\..\HSN-Demo2\C-EntranceDet\XMain.cpp"
 				>
 			</File>
@@ -191,6 +199,14 @@
 			</File>
 			<File
 				RelativePath="..\..\..\HSN-Demo2\C-EntranceDet\_MoteClass.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\HSN-Demo2\C-Server\_Socket.h"
+				>
+			</File>
+			<File
+				RelativePath="..\Network.h"
 				>
 			</File>
 		</Filter>
