@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <string>
-#include "C:/Documents and Settings/lobaton/Desktop/HSN-Demo2/C-EntranceDet/_MoteClass.h"
+#include "../../HSN-Demo2/C-EntranceDet/_MoteClass.h"
 
 using namespace std;
 

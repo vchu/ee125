@@ -76,7 +76,7 @@ int main()
   int delay; // Delay used for stopping when occlusions are detected.
 
   // Now we iterate over all frames.
-  cvWaitKey(0);
+  //cvWaitKey(0);
   for(int i = 5; i<=FileData.getNoFrames(); i++)
   {
     delay = 10;
@@ -183,8 +183,10 @@ int main()
     xshort buf[1000];
     int bufSz = GetPkgModel(buf,&(mote[n]));
     printf("\nMODEL PACKAGE: \n    ");
-    sprintf(imName,"../../Pkg_Model_%02d.dta",n);
+    //sprintf(imName,"../../Pkg_Model_%02d.dta",n);
     out.open(imName,ios::binary);
+	std::cout<<"Size:"<<bufSz<<"\n";
+	
     for(int i=0; i<bufSz; i++)
     {
       printf("%d ",(int)buf[i]);
@@ -235,7 +237,7 @@ int main()
   }
 
   // Releasing Images and Windows
-  cvWaitKey(0);
+  //cvWaitKey(0);
 
   delete BG;
   delete segPtr[0];
