@@ -7,6 +7,7 @@
 #include "_BackgroundModel.h"
 #include "_Funcs.h"
 #include "_MoteClass.h"
+#include "..\..\HSN-Demo2\C-Server\_Socket.h"
 using namespace std;
 
 int main()
@@ -211,13 +212,19 @@ int main()
     // Obtaining and Displaying Observations Package.
     buf[0] = 0; // Because observations start at mote 0.
     bufSz = GetPkgObservations(buf+1,&(mote[n]),30)+1;
-    printf("\nOBSERVATIONS PACKAGE: \n    ");
+    char* sendbuffer;
+	printf("\nOBSERVATIONS PACKAGE: \n    ");
     sprintf(imName,"../../Pkg_Observations_%02d.dta",n);
     out.open(imName,ios::binary);
     for(int i=0; i<bufSz; i++)
     {
-      printf("%d ",(int)buf[i]);
+		//printf(sendbuffer,"%d ",(int)buf[i]);
+      sprintf(sendbuffer,"%d ",(int)buf[i]);
     }
+	sprintf(sendbuffer, "12 %s", sendbuffer);
+	printf("%s ",sendbuffer);
+	SocketClient s("localhost", 2000);     
+	s.SendLine(sendbuffer);
     out.write((char*)buf,bufSz);
     out.close();
     printf("\n");
