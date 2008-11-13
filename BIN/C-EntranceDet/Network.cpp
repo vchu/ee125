@@ -1,7 +1,7 @@
 #include "..\..\HSN-Demo2\C-Server\_Socket.h"
 #include <iostream>
 
-void sendTo(int ID, unsigned char * data, int dataSize, SocketClient s)
+void sendTo(int ID, unsigned char * data, int dataSize, Socket s)
 {
 	char* sendbuffer; // Buffer for package
 	sendbuffer = (char *) malloc((dataSize+2)*3);
@@ -12,7 +12,8 @@ void sendTo(int ID, unsigned char * data, int dataSize, SocketClient s)
 	  sprintf(a, "%d ", (int)data[i]);
 	  strcat(sendbuffer,a);
     } 
-    s.SendLine(sendbuffer);
+	//send(s, data, dataSize, 0);
+    //s.SendLine(sendbuffer);
 	delete(sendbuffer);
 	delete(a);
 }

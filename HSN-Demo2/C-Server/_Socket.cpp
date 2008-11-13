@@ -156,7 +156,10 @@ void Socket::SendLine(std::string s) {
 void Socket::SendBytes(const std::string& s) {
   send(s_,s.c_str(),s.length(),0);
 }
-
+void Socket::sendTo(int ID, const char * data, int dataSize)
+{
+	send(s_, data, dataSize, 0);
+}
 SocketServer::SocketServer(int port, int connections, TypeSocket type) {
   sockaddr_in sa;
 
