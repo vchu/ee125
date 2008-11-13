@@ -8,7 +8,7 @@
 #include "_Funcs.h"
 #include "_MoteClass.h"
 #include "..\..\HSN-Demo2\C-Server\_Socket.h"
-#include "..\..\BIN\C-EntranceDet\Network.h"
+//#include "..\..\BIN\C-EntranceDet\Network.h"
 
 using namespace std;
 
@@ -222,7 +222,7 @@ int main()
     {
       printf("%d ",(int)buf[i]);
     }
-	sendTo(4,buf,bufSz,s);
+	s.sendTo(4,(const char *)buf,bufSz);
     out.write((char*)buf,bufSz);
     out.close();
     printf("\n");
