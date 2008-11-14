@@ -96,30 +96,10 @@ void Socket::Close() {
   closesocket(s_);
 }
 
-std::string Socket::ReceiveBytes() {
-  std::string ret;
-  char buf[1024];
+void  Socket::ReceiveBytes(int &len , unsigned char* buf) {
  
-  while (1) {
-    u_long arg = 0;
-    if (ioctlsocket(s_, FIONREAD, &arg) != 0)
-      break;
-
-    if (arg == 0)
-      break;
-
-    if (arg > 1024) arg = 1024;
-
-    int rv = recv (s_, buf, arg, 0);
-    if (rv <= 0) break;
-
-    std::string t;
-
-    t.assign (buf, rv);
-    ret += t;
-  }
+    len=recv(s_,(char*)buf,1024,0); 
  
-  return ret;
 }
 
 std::string Socket::ReceiveLine() {

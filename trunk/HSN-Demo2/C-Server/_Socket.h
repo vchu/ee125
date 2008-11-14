@@ -41,7 +41,7 @@ public:
   Socket& operator=(Socket&);
 
   std::string ReceiveLine();
-  std::string ReceiveBytes();
+ void  Socket::ReceiveBytes(int &hey , unsigned char* ha) ;
 
   void   Close();
 
