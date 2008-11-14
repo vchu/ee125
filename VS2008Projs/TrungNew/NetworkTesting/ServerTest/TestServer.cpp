@@ -7,8 +7,14 @@ unsigned __stdcall Answer(void* a) {
   Socket* s = (Socket*) a;
 
   while (1) {
-    std::string r = s->ReceiveLine();
-    if (r.empty()) break;
+	std::cout<<"blah";
+	int len;
+	
+    unsigned char* r ;
+	s->ReceiveBytes(len, r);
+	
+    if (r==NULL) break;
+
 	std::cout<<"Client sent:"<<r<<"\n";
 	//blahsdf
   
