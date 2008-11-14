@@ -68,3 +68,11 @@ We were able to create a Network class with function send:
 
 Testing:
    * We were also able to run the server on one central computer and send it data from another computer as a "client" with actual data from the original camera input in Xmain
+
+==11-12-2008: SendBytes and Recieive==
+We decided that it would be safer and more effective to send bytes instead of dealing with a string.  Sadly it took us 2-3 hours to figure out how to use the recv API function correctly.  We ended up passing in a pointer incorrectly which caused an infinite loop.
+   * No longer have the same format to send
+   * 
+
+We got SendBytes to work quickly and the rest of the time for receiveBytes.
+   * ReceiveBytes takes in a variable len and r.  
