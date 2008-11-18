@@ -136,9 +136,17 @@ void Socket::SendLine(std::string s) {
 void Socket::SendBytes(const std::string& s) {
   send(s_,s.c_str(),s.length(),0);
 }
-void Socket::sendTo(int ID, const char * data, int dataSize)
-{
-	send(s_, data, dataSize, 0);
+void Socket::sendTo(char physicCam , char subView, const char * data, int dataSize)
+{   
+	char* dataNew=malloc(dataSize+5);
+	dataNew[0]=physicCam;
+	dataNew[1]=subView;
+	for (int i = 0 ; i<dataSize;i++)
+	{
+     dataNew[2+i]=data[i];
+	}
+	
+	send(s_, (const char*)dataNew, dataSize, 0);
 }
 SocketServer::SocketServer(int port, int connections, TypeSocket type) {
   sockaddr_in sa;
