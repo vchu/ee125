@@ -76,3 +76,15 @@ We decided that it would be safer and more effective to send bytes instead of de
 
 We got SendBytes to work quickly and the rest of the time for receiveBytes.
    * ReceiveBytes takes in a variable len and r.  
+
+==11-14-2008: Queues/Meeting==
+Started to work on Queues and implementing on Server side.
+
+Had meeting with Edgar.  He gave us the code/program for matlab that compiles data from the server into a pretty map interface
+
+==11-17-2008: More Queues==
+   * Got a working Queue
+   * Implemented System calls to make directories and writing to files
+   * Still working on making the proper header to make directories work properly
+   * Edgar was there and helped mount cameras and make an "encoder" for the robot
+   * Trung has a working PWM for the robot 
