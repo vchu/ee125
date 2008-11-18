@@ -15,7 +15,7 @@ using namespace std;
 int main()
 {
   // Initialize Socket Port
-  SocketClient s("192.168.1.2", 2000);  
+  SocketClient s("localhost", 2000);  
 
   // Initializing File Capture
   FileCapture FileData;
@@ -222,7 +222,7 @@ int main()
     {
       printf("%d ",(int)buf[i]);
     }
-	s.sendTo(4,(const char *)buf,bufSz);
+	s.sendTo(4,1,(const char *)buf,bufSz);
     out.write((char*)buf,bufSz);
     out.close();
     printf("\n");
