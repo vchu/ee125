@@ -136,14 +136,15 @@ void Socket::SendLine(std::string s) {
 void Socket::SendBytes(const std::string& s) {
   send(s_,s.c_str(),s.length(),0);
 }
-void Socket::sendTo(char physicCam , char subView, const char * data, int dataSize)
+void Socket::sendTo(char physicCam , char subView, char pkgType, const char * data, int dataSize)
 {   
 	char* dataNew = (char *) malloc(dataSize+5);
 	dataNew[0]=physicCam;
 	dataNew[1]=subView;
+	dataNew[2]=pkgType;
 	for (int i = 0 ; i<dataSize;i++)
 	{
-     dataNew[2+i]=data[i];
+     dataNew[3+i]=data[i];
 	}
 	
 	send(s_, (char*)dataNew, dataSize, 0);
