@@ -2,7 +2,7 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="8.00"
-	Name="Proj"
+	Name="ProjServer"
 	ProjectGUID="{433FA14A-92B0-40E4-9A63-C0FA45B93FE8}"
 	>
 	<Platforms>
