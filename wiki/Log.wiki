@@ -91,6 +91,6 @@ Had meeting with Edgar.  He gave us the code/program for matlab that compiles da
 
 
 ==11-19-2008: EntranceDetection test==
-   * Got EntranceDetection code to work with server end. Temporarily commented out line 141 on \HSN-Demo2\C-Server\_socket.cpp because it wasn't allowing the rest of the code to compile. 
+   * Got EntranceDetection code to work with server end. Temporarily commented out line 141 on {{{\HSN-Demo2\C-Server\_socket.cpp}}} because it wasn't allowing the rest of the code to compile. 
    * Edgar's sample data was processed as he showed us in his demo.
       * When you run the code, click on one of the 3 windows that open up and press any button on the keyboard.
