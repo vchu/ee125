@@ -46,37 +46,62 @@ unsigned __stdcall Answer(void* a) {
 	char* temp = (char *) malloc(len);
 	for (int i = 0 ; i<len; i++){
 		printf("%d ",r[i]);
-		temp[i] = r[i];
+		temp[i] = r[i];	// deep copy received values into an array
 	}
-	dataQueue.push(temp);
-	char* parseData = dataQueue.front();
-	int ID = parseData[0];
-	char* IDstr= (char *) malloc(4);
-	char* folderpath= (char *) malloc(256);
-	sprintf(IDstr, "%d", ID);
-	sprintf(folderpath, "C:\\%s", IDstr);
-	
-	if(!PathExists(folderpath)){
-		mkdir(folderpath);
-	}
-	char * temp1 = (char *) malloc(256);
-	sprintf(temp1, "%d", parseData[1]);
-	char * filename = (char *) malloc(256);
-	sprintf(filename, "%s\\%s", folderpath, temp1);
-	std::ofstream myFile (filename, ios::out | ios::binary);
-	std::string blah= parseData;
-    myFile.write (parseData, len);
-	myFile.close();
-
-	dataQueue.pop();	// takes out packet from queue
-	delete parseData;	// clear memory from malloc
+	printf("data queue is: %d",dataQueue.size());
+	dataQueue.push(temp);	//push into the queue
+	printf("data queue is: %d",dataQueue.size());
+	delete temp;
   }
 
   delete s;
   
-
   return 0;
 }
+
+unsigned __stdcall ProcessPacket2(void* param)
+{
+	printf("got here");
+	while(1)
+	{
+		//printf("data Queue is empty? %d", dataQueue.empty());
+		
+		while (dataQueue.size() > 0)
+		{
+			printf(" and here...");
+			char* parseData = dataQueue.front();	//pops packet from queue
+			int physicCam = parseData[0];			//grabs	PhysCam number
+			char* physicCamstr= (char *) malloc(4);
+			char* folderpath= (char *) malloc(256);
+			sprintf(physicCamstr, "%d", physicCam);
+			sprintf(folderpath, "C:\\%s", physicCamstr);
+			
+			if(!PathExists(folderpath)){
+				mkdir(folderpath);
+			}
+
+			char * subViewStr = (char *) malloc(256);
+			sprintf(subViewStr, "%d", parseData[1]);		// grabs subView number and converts to string
+			char * filename = (char *) malloc(256);
+			sprintf(filename, "%s\\%s", folderpath, subViewStr);
+			printf("\n filename is: %s", filename);
+			std::ofstream myFile (filename, ios::out | ios::binary); //write binary to created file
+			//std::string blah= parseData;
+			//myFile.write (parseData, len);
+			myFile.close();
+
+			dataQueue.pop();	// takes out packet from queue
+			delete parseData;	// clear memory from malloc
+			delete physicCamstr;
+			delete folderpath;
+			delete filename;
+			delete subViewStr;
+			}
+	}
+	printf("ended thread");
+	return 0;
+}
+
 
 // This function processes the packet and it MUST be created if using the
 // "MoteComm" functions.
@@ -117,12 +142,15 @@ int main(int argc, char* argv[]) {
   SocketServer in(2000,5);
 
   while (1) {
-	  printf("HeLLo thread");
+	  printf(" Hello thread ");
     Socket* s=in.Accept();
 
     unsigned ret;
-	printf("Good bye thread"); 
+	printf(" Good-bye thread "); 
+
     _beginthreadex(0,0,Answer,(void*) s,0,&ret);
+
+	_beginthreadex(0,0,ProcessPacket2,NULL,0,&ret);
     
 
   }
