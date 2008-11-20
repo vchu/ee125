@@ -33,7 +33,7 @@ unsigned __stdcall Answer(void* a) {
 	}
 	dataQueue.push(temp);
 	char* parseData = dataQueue.front();
-	int ID = parseData[3];
+	int ID = parseData[0];
 	char* IDstr= (char *) malloc(4);
 	char* folderpath= (char *) malloc(256);
 	sprintf(IDstr, "%d", ID);
@@ -43,7 +43,7 @@ unsigned __stdcall Answer(void* a) {
 		mkdir(folderpath);
 	}
 	char * temp1 = (char *) malloc(256);
-	sprintf(temp1, "%d", parseData[4]);
+	sprintf(temp1, "%d", parseData[1]);
 	char * filename = (char *) malloc(256);
 	sprintf(filename, "%s\\%s", folderpath, temp1);
 	printf("\n filename is: %s", filename);
