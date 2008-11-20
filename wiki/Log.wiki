@@ -88,3 +88,8 @@ Had meeting with Edgar.  He gave us the code/program for matlab that compiles da
    * Still working on making the proper header to make directories work properly
    * Edgar was there and helped mount cameras and make an "encoder" for the robot
    * Trung has a working PWM for the robot 
+
+
+==11-19-2008: EntranceDetection test==
+   * Got EntranceDetection code to work with server end. Temporarily commented out line 141 on \HSN-Demo2\C-Server\_socket.cpp because it wasn't allowing the rest of the code to compile. 
+   * Edgar's sample data was processed as he showed us in his demo. 
