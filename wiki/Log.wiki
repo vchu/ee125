@@ -94,3 +94,8 @@ Had meeting with Edgar.  He gave us the code/program for matlab that compiles da
    * Got EntranceDetection code to work with server end. Temporarily commented out line 141 on {{{\HSN-Demo2\C-Server\_socket.cpp}}} because it wasn't allowing the rest of the code to compile. 
    * Edgar's sample data was processed as he showed us in his demo.
       * When you run the code, click on one of the 3 windows that open up and press any button on the keyboard.
+
+==11-19-2008: Server Revamp==
+   * Transferred test server and _Socket to a new project and able to compile.
+   * Fixed _socket.cpp issue (just forgot to cast ><")
+   * Got proper header and folder issues resolved.  Need to still think about adding pkgType to header
