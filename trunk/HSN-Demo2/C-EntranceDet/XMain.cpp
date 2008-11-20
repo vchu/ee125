@@ -222,7 +222,7 @@ int main()
     {
       printf("%d ",(int)buf[i]);
     }
-	s.sendTo(4,1,(const char *)buf,bufSz);
+	s.sendTo(4,1,13,(const char *)buf,bufSz);
     out.write((char*)buf,bufSz);
     out.close();
     printf("\n");
