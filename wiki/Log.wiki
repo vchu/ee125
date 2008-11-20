@@ -99,3 +99,7 @@ Had meeting with Edgar.  He gave us the code/program for matlab that compiles da
    * Transferred test server and Socket to a new project and able to compile with Edgar's server project.  Included all mote functions including mote_comm (Need to think about how to properly remove mote_comm and replace with our sending/receive functions)
    * Fixed socket.cpp issue (just forgot to cast ><")
    * Got proper header and folder issues resolved.  Need to still think about adding pkgType to header
+
+==11-20-2008: Server integration==
+   * Split up the test server functions that were created earlier and put them in the new server.  One thread to receive threads and the other to parse.  
+   * Ran into issues with the thread suddenly stopping?  Seems to hang instead of repeatedly looping.
