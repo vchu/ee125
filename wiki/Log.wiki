@@ -97,5 +97,5 @@ Had meeting with Edgar.  He gave us the code/program for matlab that compiles da
 
 ==11-19-2008: Server Revamp==
    * Transferred test server and Socket to a new project and able to compile with Edgar's server project.  Included all mote functions including mote_comm (Need to think about how to properly remove mote_comm and replace with our sending/receive functions)
-   * Fixed _socket.cpp issue (just forgot to cast ><")
+   * Fixed socket.cpp issue (just forgot to cast ><")
    * Got proper header and folder issues resolved.  Need to still think about adding pkgType to header
