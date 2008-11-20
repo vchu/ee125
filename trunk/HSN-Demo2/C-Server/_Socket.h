@@ -53,7 +53,7 @@ public:
   // because SendBytes does not modify the std::string passed 
   // (in contrast to SendLine).
   void   SendBytes(const std::string&);
-  void   sendTo(char,char, const char *, int);
+  void   sendTo(char,char,char,const char *, int);
 
 protected:
   friend class SocketServer;

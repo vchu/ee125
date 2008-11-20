@@ -59,7 +59,7 @@ void ProcessPacket(int moteID, int pktType, xshort* buf, int bufSz)
 		ProcPkgModel(buf,&(MOTE[0])+moteID);
 		break;
 	case 12:
-    ProcPkgParameters(buf,&(MOTE[0])+moteID);
+		ProcPkgParameters(buf,&(MOTE[0])+moteID);
 		break;
 	case 13:
 		ProcPkgObs(buf[0],buf+1,bufSz-1,&(MOTE[0])+moteID);
