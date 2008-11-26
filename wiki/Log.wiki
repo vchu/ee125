@@ -116,3 +116,4 @@ Had meeting with Edgar.  He gave us the code/program for matlab that compiles da
 ==11-25-2008: Parse Packets==
    * Figured out that the Queue stores the pointer.  Not a good idea to store pointers unless you don't delete them until after it is parsed.
    * Got a observation packet to parse through Edgar's code
+   * Rebuilt the proper code repositories to have project and code without going over quota limit from Google
