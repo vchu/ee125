@@ -1,0 +1,25 @@
+# Meeting minutes from 11-24-2008
+
+= Goals and Progress so Far =
+
+Spent a good amount of time discussing how to do deal with graph nodes/robot
+motion
+
+Things to do mentioned below are planned to be done after Thanksgiving
+
+Robot - Power conversion done/Mounted board (Trung)
+   * working on Sonar (over Thanksgiving)
+   * Can drive servo and communication through the wireless  
+   * Working on motion/sensor to determine how much robot works
+
+Basic - Creating new project to make it neater (had issues with Google codes running out of space) (Trung and Vivian)
+
+Server - 
+   * Working on multi-thread (Vivian)
+   * Got networking communication and queue set up (vivian and Trung)
+   * Working on passing data from queue to edgar's server functions
+
+Client/Camera - Done with reading through Edgar's algorithm (Jason and
+Shervin)
+   * Working on live-input
+   * Add where packets are going to be sent to server
