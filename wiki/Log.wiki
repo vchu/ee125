@@ -103,3 +103,16 @@ Had meeting with Edgar.  He gave us the code/program for matlab that compiles da
 ==11-20-2008: Server integration==
    * Split up the test server functions that were created earlier and put them in the new server.  One thread to receive threads and the other to parse.  
    * Ran into issues with the thread suddenly stopping?  Seems to hang instead of repeatedly looping.
+
+==11-21-2008: Thread investigation==
+   * Still no luck with multi-threading
+
+==11-24-2008: Team Meeting==
+   * Met to discuss goals for after Thanksgiving
+   * Got multi-threading to work
+   * Also worked on getting the queue to parse into Edgar's code
+   * Ran into a problem with the queue and how it stored the values.
+
+==11-25-2008: Parse Packets==
+   * Figured out that the Queue stores the pointer.  Not a good idea to store pointers unless you don't delete them until after it is parsed.
+   * Got a observation packet to parse through Edgar's code
