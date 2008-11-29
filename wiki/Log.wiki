@@ -117,3 +117,7 @@ Had meeting with Edgar.  He gave us the code/program for matlab that compiles da
    * Figured out that the Queue stores the pointer.  Not a good idea to store pointers unless you don't delete them until after it is parsed.
    * Got a observation packet to parse through Edgar's code
    * Rebuilt the proper code repositories to have project and code without going over quota limit from Google
+
+==11-28-2008: Send Errors==
+   * Realized that Send was dropping three values because it was passing the incorrect length created by header tags added to packet- fixed by size+3
+   * Made changes to NewServer - still trying to integrate Edgar's code.  Semi-successful
