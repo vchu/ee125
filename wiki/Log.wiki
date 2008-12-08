@@ -121,3 +121,15 @@ Had meeting with Edgar.  He gave us the code/program for matlab that compiles da
 ==11-28-2008: Send Errors==
    * Realized that Send was dropping three values because it was passing the incorrect length created by header tags added to packet- fixed by size+3
    * Made changes to NewServer - still trying to integrate Edgar's code.  Semi-successful
+
+==12-4-2008: Live feed==
+
+    * Changed xmain.cpp in Client to take live feed, as opposed to reading from a file code
+    * Should pop up with a camera selection when it runs.Pick any camera not currently being used. Another window should pop up with camera option. Make sure auto white balance and auto gain are both disabled 
+   * Note that the line drawing is not fully tested
+
+==12-5-2008: Line drawing tests, packet sending errors, Sonar prep==
+
+   * Line drawing has been fully tested and tweaked to meet our specifications. The client is able to effectively detect up to 2 bisecting lines (3 separate regions for a given camera)
+   * Server was modified to take packets from client. However an error in bit counting/shifting caused the server to receive the packets improperly, clipping packet information and registering the wrong length.
+   * Sonar modules were prepared for integration into the robot. Wires were stripped and attached to female pin connectors to be attached to the robot's breadboard assembly.  
